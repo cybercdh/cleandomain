@@ -105,6 +105,7 @@ func cleanAndValidateDomain(d string) string {
 	// replace and clean the domain
 	d = invalidStartCharsRegexp.ReplaceAllString(d, "")
 	d = strings.TrimLeft(d, ".")
+	d = strings.TrimRight(d, ".")
 	d = strings.ToLower(d)
 
 	if IsValidDomain(d) {
